@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-column sidenav">
+                <div class="nav-content">
+                    <p class="navbar-brand" href="#">MyQuility</p>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto d-flex flex-column">
+                            <li class="nav-item active">
+                                <a class="nav-link" (click)="enableHome()">Home </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" (click)="enableConfigurations()">Configurations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" (click)="enableConsumers()">Consumers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" (click)="enableAgents()">Agents</a>
+                            </li>
+
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </nav>
+
+
+
+        </div>
+        <div class="col-10 dashboard" >
+           <app-home *ngIf="home"></app-home>
+           <app-agents *ngIf="agents"></app-agents>
+           <app-configurations *ngIf="configs"></app-configurations>
+           <app-consumers *ngIf="consumers"></app-consumers>
+        </div>
+    </div>
+</div>

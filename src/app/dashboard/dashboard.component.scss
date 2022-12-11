@@ -1,0 +1,19 @@
+.sidenav{
+    height: 100vh;
+    background-color: #313a46 !important;
+    .nav-content{
+        width: 100%;
+    padding-left: 3vw;
+    }
+    a{
+    cursor: pointer;
+    color:#8391a2;
+    }
+    a:hover{
+        color: #ffffff;
+    }
+}
+
+.dashboard{
+    background-color: #f1f3fa;
+}

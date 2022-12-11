@@ -1,0 +1,109 @@
+
+
+<!-- As a link -->
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-0 h1" href="#">Dashboard</a>
+    </div>
+  </nav>
+  
+
+
+
+
+
+<div class="container-fluid  mt-5" style="padding: 0px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6" style="border: 10px solid white; padding: 30px;">
+                <div class="row">
+                    <!-- <div class="col" *ngFor="let title of cardtitle">
+                    <app-card [title]="title"></app-card>
+        
+                </div> -->
+
+                    <div class="col" style="padding:0px;" *ngFor="let card of cardContent">
+                        <app-card [cardContent]="card"></app-card>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-6" style="padding: 0px;">
+                <div style="display: flex; border: 10px solid white;">
+                    <canvas baseChart width="300" height="300"
+                                [data]="agentConsumerData"
+                                [labels]="agentConsumerChartLabels"
+                                [type]="'doughnut'"
+                                [options]="agentConsumerChartOptions"
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                
+                    <canvas baseChart width="300" height="300" style="margin-left: 2rem ;"
+                                [data]="exposerChartData"
+                                [labels]="exposerChartLabels"
+                                [type]="'doughnut'"
+                                [options]="exposerChartOptions"
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                  </div>
+            </div>
+        </div>
+
+    </div>
+  
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6" style="border: 10px solid white;">
+            <div class=" chartDropdown text-end">
+                <div ngbDropdown class="d-inline-block">
+                    <button type="button" class="btn btn-outline-primary " id="dropdownBasic1"
+                        ngbDropdownToggle>Consumers</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem (click)="monthly()">Monthly</button>
+                        <button ngbDropdownItem (click)="weekly()">Weekly</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container  mt-4 chartStyle" *ngIf="byMonth">
+                <div style="display: block;">
+                    <canvas baseChart width="748" height="400" [type]="'line'" [data]="MonthlyData"
+                        [options]="lineChartOptions" [legend]="lineChartLegend">
+                    </canvas>
+                </div>
+
+
+            </div>
+
+            <div class="container  mt-4 chartStyle" *ngIf="byWeek">
+                <div style="display: block;">
+                    <canvas baseChart width="748" height="400" [type]="'line'" [data]="WeeklyData"
+                        [options]="lineChartOptions" [legend]="lineChartLegend">
+                    </canvas>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-6" style="border: 10px solid white;">
+            <div style="display: block; margin-top: 5rem;" >
+                <canvas baseChart 
+                  [data]="barChartData"
+              
+                  [options]="barChartOptions"
+                
+                  [legend]="barChartLegend"
+                  [type]="'bar'">
+                </canvas>
+              </div>
+              
+        </div>
+    </div>
+
+
+
+</div>
