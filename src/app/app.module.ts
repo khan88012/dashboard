@@ -11,6 +11,7 @@ import { AgentsComponent } from './agents/agents.component';
 import { CardComponent } from './card/card.component';
 import { NgChartsModule } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ConfigurationsComponent,
     ConsumersComponent,
     AgentsComponent,
-    CardComponent
+    CardComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
